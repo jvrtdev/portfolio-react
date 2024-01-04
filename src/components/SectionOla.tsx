@@ -41,23 +41,31 @@ export default function SectionOla() {
                 <div className="flex flex-col justify-between md:flex-row">
                     <div className="text-white mt-5">
                         <motion.h1 className="text-8xl md:text-8xl font-sans font-bold"
-                        animate={{y:[0,-5,-10,-10,-5,0,5,10,10,5,0] }}
-                        transition={{repeat: Infinity, 
-                            ease: "easeInOut", }}
-
+                        initial={{x: -100, opacity: 0}}
+                        whileInView={{x:0, opacity: 1}}
+                        transition={{ease: "easeOut", duration: 0.5, delay: 0.5}}
                         >Olá!
                         
                         </motion.h1>
-                        <h2 className="text-2xl md:text-2xl font-mono tracking-tighter"
-                        >Meu nome é João, Eu sou Desenvolvedor Front-End</h2>
+                        <motion.h2 className="text-2xl md:text-2xl font-mono tracking-tighter"
+                        initial={{x: -100, opacity: 0}}
+                        whileInView={{x:0, opacity: 1}}
+                        transition={{ease: "easeOut", duration: 0.5, delay: 0.5}}
+                        >
+                            Meu nome é João, Eu sou Desenvolvedor Front-End</motion.h2>
+                    
                     </div>
-                    <div className="mt-5 flex justify-center">
+                    <motion.div className="mt-5 flex justify-center"
+                    initial={{x: 100, opacity: 0}}
+                    whileInView={{x:0, opacity: 1}}
+                    transition={{ease: "easeOut", duration: 0.5, delay: 0.5}}
+                    >
                         <img src="/foto.jpeg" alt="foto-joao"
                         className="rounded-full w-70 h-70"
                         />
-                    </div>
+                    </motion.div>
                 </div>
-                    <div className="flex justify-center gap-2 mt-2 flex">
+                    <div className="flex justify-center gap-2 mt-2 flex-col items-center sm:flex-row">
                         {Buttons.map((button, index) => (
                                 <ButtonContato 
                                 key={index}
